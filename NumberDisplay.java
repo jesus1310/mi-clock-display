@@ -1,9 +1,15 @@
 
 /**
- * Write a description of class NumberDisplay here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Un constructor que recibe por parámetro el límite del display y 
+ * que fija el valor actual del display a 0.
+ * Un método setter que fija el valor actual del display al valor pasado como parámetro 
+ * (nombre del método: setValue).
+ * Un método que devuelve el valor actual del display en forma de cadena de 2 caracteres 
+ * (nombre del método: getDisplayValue).
+ * Un método que devuelve el valor actual del display como entero 
+ * (nombre del método: getValue),
+ * Un método que incrementa en 1 al display y lo hace volver al principio si alcanza el límite 
+ * (nombre del método: increment)
  */
 public class NumberDisplay
 {
@@ -19,5 +25,15 @@ public class NumberDisplay
     {
         value = 0;
         limit = maximo;
+    }
+    
+    /**
+     * Método que permite fijar el valor pasado por parámetro.
+     */  
+    public void setValue(int newValue)
+    {
+        if (newValue >=0 && newValue <= limit) {
+            value = newValue;
+        }
     }
 }

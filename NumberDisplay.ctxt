@@ -2,4 +2,7 @@
 comment0.params=maximo
 comment0.target=NumberDisplay(int)
 comment0.text=\r\n\ Establece\ los\ valores\ iniciales\ y\ el\ l\u00EDmite\r\n
-numComments=1
+comment1.params=newValue
+comment1.target=void\ setValue(int)
+comment1.text=\r\n\ M\u00E9todo\ que\ permite\ fijar\ el\ valor\ pasado\ por\ par\u00E1metro.\r\n
+numComments=2
