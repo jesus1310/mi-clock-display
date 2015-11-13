@@ -25,7 +25,7 @@ public class NumberDisplay
     {
         value = 0;
         limit = maximo;
-    }
+   }
     
     /**
      * Método que permite fijar el valor pasado por parámetro.
@@ -35,5 +35,17 @@ public class NumberDisplay
         if (newValue >=0 && newValue <= limit) {
             value = newValue;
         }
+    }
+    
+    /**
+     *  Método que devuelve un String de dos caracteres
+     */
+    public String getDisplayValue()
+    {
+        String display = Integer.toString(value);
+        if (display.length() == 1 ){
+            display = "0" + value;
+        }
+        return display;
     }
 }
