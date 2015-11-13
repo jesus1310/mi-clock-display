@@ -7,27 +7,17 @@
  */
 public class NumberDisplay
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    // Atributo para controlar el valor de los objetos
+    private int value;
+    // Atributo para controlar el límite del valor
+    private int limit;
 
     /**
-     * Constructor for objects of class NumberDisplay
+     * Establece los valores iniciales y el límite
      */
-    public NumberDisplay()
+    public NumberDisplay(int maximo)
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        value = 0;
+        limit = maximo;
     }
 }
