@@ -48,4 +48,12 @@ public class NumberDisplay
         }
         return display;
     }
+    
+    /**
+     * Método que devuelve un int con el valor actual del display 
+     */
+    public int getValue()
+    {
+        return value;
+    }
 }
