@@ -1,4 +1,3 @@
-
 /**
  * Un constructor que recibe por parámetro el límite del display y 
  * que fija el valor actual del display a 0.
@@ -18,42 +17,53 @@ public class NumberDisplay
     // Atributo para controlar el límite del valor
     private int limit;
 
-    /**
-     * Establece los valores iniciales y el límite
-     */
+   /**
+    * Establece los valores iniciales y el límite
+    */
     public NumberDisplay(int maximo)
     {
         value = 0;
         limit = maximo;
    }
     
-    /**
-     * Método que permite fijar el valor pasado por parámetro.
-     */  
-    public void setValue(int newValue)
-    {
-        if (newValue >=0 && newValue <= limit) {
-            value = newValue;
-        }
-    }
+   /**
+    * Método que permite fijar el valor pasado por parámetro.
+    */  
+   public void setValue(int newValue)
+   {
+       if (newValue >=0 && newValue <= limit) {
+           value = newValue;
+       }
+   }
     
-    /**
-     *  Método que devuelve un String de dos caracteres
-     */
-    public String getDisplayValue()
-    {
-        String display = Integer.toString(value);
-        if (display.length() == 1 ){
-            display = "0" + value;
-        }
-        return display;
-    }
+   /**
+    *  Método que devuelve un String de dos caracteres
+    */
+   public String getDisplayValue()
+   {
+       String display = Integer.toString(value);
+       if (display.length() == 1 ){
+           display = "0" + value;
+       }
+       return display;
+   }
     
-    /**
-     * Método que devuelve un int con el valor actual del display 
-     */
-    public int getValue()
-    {
-        return value;
-    }
+   /**
+    * Método que devuelve un int con el valor actual del display 
+    */
+   public int getValue()
+   {
+       return value;
+   }
+   
+   /**
+    * Método que incrementa en 1 el valor de value
+    */
+   public void increment()
+   {
+       value = value + 1;
+       if (value == limit){
+           value = 0;
+       } 
+   }
 }
