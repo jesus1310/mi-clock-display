@@ -20,7 +20,6 @@ public class ClockDisplay
     {
         horas = new NumberDisplay(23);
         minutos = new NumberDisplay(59);
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -32,7 +31,6 @@ public class ClockDisplay
         horas.setValue(nuevaHora);
         minutos = new NumberDisplay(59);
         minutos.setValue(nuevoMinuto);
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -43,6 +41,14 @@ public class ClockDisplay
     {
         horas.setValue(h);
         minutos.setValue(m);
-        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
+    
+    /**
+     * Método que devuelve una cadena de 5 caracteres con formato "00:00"
+     */
+    public String getTime()
+    {
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+        return horaActual;
+    }    
 }
