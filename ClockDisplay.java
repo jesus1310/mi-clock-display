@@ -11,13 +11,27 @@ public class ClockDisplay
     private NumberDisplay horas;
     // Atributo de la clase NumberDisplay que controla los minutos
     private NumberDisplay minutos;
-
+    // Atributo que controla una cadena de 5 caracteres
+    private String horaActual;
     /**
-     * Constructor for objects of class ClockDisplay
+     * Constructor que fija la hora a 00:00 y establece el límite.
      */
     public ClockDisplay()
     {
-        horas = new NumberDisplay(24);
-        minutos = new NumberDisplay(60);
+        horas = new NumberDisplay(23);
+        minutos = new NumberDisplay(59);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+    }
+    
+    /**
+     * Constructor que permite fijar la hora por parámetros.
+     */
+    public ClockDisplay(int nuevaHora,int nuevoMinuto)
+    {
+        horas = new NumberDisplay(23);
+        horas.setValue(nuevaHora);
+        minutos = new NumberDisplay(59);
+        minutos.setValue(nuevoMinuto);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
 }
