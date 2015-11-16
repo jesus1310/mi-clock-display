@@ -18,8 +18,8 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        horas = new NumberDisplay(23);
-        minutos = new NumberDisplay(59);
+        horas = new NumberDisplay(24);
+        minutos = new NumberDisplay(60);
     }
     
     /**
@@ -27,9 +27,9 @@ public class ClockDisplay
      */
     public ClockDisplay(int nuevaHora,int nuevoMinuto)
     {
-        horas = new NumberDisplay(23);
+        horas = new NumberDisplay(24);
         horas.setValue(nuevaHora);
-        minutos = new NumberDisplay(59);
+        minutos = new NumberDisplay(60);
         minutos.setValue(nuevoMinuto);
     }
     
@@ -50,5 +50,17 @@ public class ClockDisplay
     {
         horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
         return horaActual;
-    }    
+    }
+    
+    /**
+     * Método que aumenta en 1 el valor de los minutos.
+     */
+    
+    public void timeTick()
+    {
+        minutos.increment();
+        if (minutos.getValue() == 0){
+            horas.increment();
+        }
+    }
 }
