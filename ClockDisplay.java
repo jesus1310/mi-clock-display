@@ -20,6 +20,7 @@ public class ClockDisplay
     {
         horas = new NumberDisplay(24);
         minutos = new NumberDisplay(60);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -31,6 +32,7 @@ public class ClockDisplay
         horas.setValue(nuevaHora);
         minutos = new NumberDisplay(60);
         minutos.setValue(nuevoMinuto);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -41,6 +43,7 @@ public class ClockDisplay
     {
         horas.setValue(h);
         minutos.setValue(m);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
     /**
@@ -62,5 +65,6 @@ public class ClockDisplay
         if (minutos.getValue() == 0){
             horas.increment();
         }
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
 }
