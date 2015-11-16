@@ -34,4 +34,15 @@ public class ClockDisplay
         minutos.setValue(nuevoMinuto);
         horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
+    
+    /**
+     * Método que permite fijar horas y minutos introducidos por parámetro.
+     */
+    
+    public void setTime(int h,int m)
+    {
+        horas.setValue(h);
+        minutos.setValue(m);
+        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+    }
 }
