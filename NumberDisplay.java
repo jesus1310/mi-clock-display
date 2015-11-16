@@ -31,7 +31,7 @@ public class NumberDisplay
     */  
    public void setValue(int newValue)
    {
-       if (newValue >=0 && newValue <= limit) {
+       if (newValue >=0 && newValue < limit) {
            value = newValue;
        }
    }

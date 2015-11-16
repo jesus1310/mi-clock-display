@@ -18,8 +18,8 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        horas = new NumberDisplay(24);
-        minutos = new NumberDisplay(60);
+        horas = new NumberDisplay(23);
+        minutos = new NumberDisplay(59);
         horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
     
@@ -28,9 +28,9 @@ public class ClockDisplay
      */
     public ClockDisplay(int nuevaHora,int nuevoMinuto)
     {
-        horas = new NumberDisplay(24);
+        horas = new NumberDisplay(23);
         horas.setValue(nuevaHora);
-        minutos = new NumberDisplay(60);
+        minutos = new NumberDisplay(59);
         minutos.setValue(nuevoMinuto);
         horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
     }
