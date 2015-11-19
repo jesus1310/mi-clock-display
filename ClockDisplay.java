@@ -44,7 +44,7 @@ public class ClockDisplay
        formato = tipoReloj;
        if (formato==true){
            update();
-        }
+       }
    }
    
    /**
@@ -58,7 +58,7 @@ public class ClockDisplay
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
        if (formato==true){
            update();
-        }
+       }
    }
    
    /**
@@ -66,6 +66,10 @@ public class ClockDisplay
     */
    public String getTime()
    {
+       horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+       if (formato==true){
+           update();
+       }
        return horaActual;
    }
    
@@ -82,7 +86,7 @@ public class ClockDisplay
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
        if (formato==true){
            update();
-        }
+       }
    }
     
    /**
@@ -110,5 +114,12 @@ public class ClockDisplay
       else{
            horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " A.M.";
       }
+   }
+   
+   /**
+    * Método que permite alternar entre los dos tipos de formato.
+    */
+   public void cambiarFormato(){
+       formato = !formato;
    }
 }
