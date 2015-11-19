@@ -76,7 +76,7 @@ public class ClockDisplay
     */
    private void update()
    {
-      if (horas.getValue()>=12){
+      if (horas.getValue()>12){
            int actualiza = horas.getValue()-12;
            if (actualiza<10){
                horaActual = "0" + actualiza + ":" + minutos.getDisplayValue() + " P.M.";
@@ -84,6 +84,14 @@ public class ClockDisplay
            else{
                horaActual = actualiza + ":" + minutos.getDisplayValue() + " P.M.";
            }
+      }
+      else if (horas.getValue()==12 && minutos.getValue()>=0){
+          if (minutos.getValue()==0){
+              horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " M.";
+          }
+          else{
+              horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " P.M.";
+          }
       }
       else{
            horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " A.M.";
