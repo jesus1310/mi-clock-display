@@ -13,28 +13,38 @@ public class ClockDisplay
    private NumberDisplay minutos;
    // Atributo que controla una cadena de 5 caracteres
    private String horaActual;
+   // Atributo que permite elegir si se utilizará el reloj en formato 12h o 24h
+   private boolean formato;
    
    /**
     * Constructor que fija la hora a 00:00 y establece el límite.
+    * Se le pasa por parámetro una variable booleana.
+    * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
     */
-   public ClockDisplay()
+   public ClockDisplay(boolean tipoReloj)
    {
        horas = new NumberDisplay(24);
        minutos = new NumberDisplay(60);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+       formato = tipoReloj;
    }
    
    /**
     * Constructor que permite fijar la hora por parámetros.
+    * Se le añade además como parámetro una variable booleana.
+    * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
     */
-   public ClockDisplay(int nuevaHora,int nuevoMinuto)
+   public ClockDisplay(int nuevaHora,int nuevoMinuto,boolean tipoReloj)
    {
        horas = new NumberDisplay(24);
        horas.setValue(nuevaHora);
        minutos = new NumberDisplay(60);
        minutos.setValue(nuevoMinuto);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       update();
+       formato = tipoReloj;
+       if (formato==true){
+           update();
+        }
    }
    
    /**
@@ -46,7 +56,9 @@ public class ClockDisplay
        horas.setValue(h);
        minutos.setValue(m);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       update();
+       if (formato==true){
+           update();
+        }
    }
    
    /**
@@ -68,7 +80,9 @@ public class ClockDisplay
            horas.increment();
        }
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       update();
+       if (formato==true){
+           update();
+        }
    }
     
    /**
