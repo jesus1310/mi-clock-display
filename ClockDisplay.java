@@ -103,7 +103,7 @@ public class ClockDisplay
                horaActual = actualiza + ":" + minutos.getDisplayValue() + " P.M.";
            }
       }
-      else if (horas.getValue()==12 && minutos.getValue()>=0){
+      else if (horas.getValue()==12){
           if (minutos.getValue()==0){
               horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " M.";
           }
@@ -111,8 +111,11 @@ public class ClockDisplay
               horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " P.M.";
           }
       }
-      else{
-           horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " A.M.";
+      else if (horas.getValue()==0){
+           horaActual = "12" + ":" + minutos.getDisplayValue() + " A.M.";
+      }
+      else{ //La hora es menor que 12 y mayor que 0
+          horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue() + " A.M.";
       }
    }
    
