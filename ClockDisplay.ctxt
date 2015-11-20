@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.params=tipoReloj
 comment0.target=ClockDisplay(boolean)
-comment0.text=\r\n\ Constructor\ que\ fija\ la\ hora\ a\ 00\:00\ y\ establece\ el\ l\u00EDmite.\r\n\ Se\ le\ pasa\ por\ par\u00E1metro\ una\ variable\ booleana.\r\n\ Si\ es\ true,\ el\ formato\ del\ reloj\ es\ 12h,\ si\ es\ false,\ el\ formato\ es\ 24h.\r\n\ Se\ le\ a\u00F1aden\ objetos\ d\u00EDa,\ mes,\ a\u00F1o\ con\ valores\ iniciales\ para\ una\ fecha\ determinada.\r\n\ y\ se\ muestran\ en\ un\ string\ con\ formato\ dd/mm/aa\r\n
+comment0.text=\r\n\ Constructor\ que\ fija\ la\ hora\ a\ 00\:00\ y\ establece\ el\ l\u00EDmite.\r\n\ Se\ le\ pasa\ por\ par\u00E1metro\ una\ variable\ booleana.\r\n\ Si\ es\ true,\ el\ formato\ del\ reloj\ es\ 12h,\ si\ es\ false,\ el\ formato\ es\ 24h.\r\n\ Se\ le\ a\u00F1aden\ d\u00EDa,\ mes,\ a\u00F1o\ con\ valores\ iniciales\ para\ una\ fecha\ determinada\r\n\ y\ se\ muestran\ en\ un\ string\ con\ formato\ dd/mm/aa\r\n
 comment1.params=nuevaHora\ nuevoMinuto\ tipoReloj\ diaInicio\ mesInicio\ annoInicio
 comment1.target=ClockDisplay(int,\ int,\ boolean,\ int,\ int,\ int)
-comment1.text=\r\n\ Constructor\ que\ permite\ fijar\ la\ hora\ por\ par\u00E1metros.\r\n\ Se\ le\ a\u00F1ade\ adem\u00E1s\ como\ par\u00E1metro\ una\ variable\ booleana.\r\n\ Si\ es\ true,\ el\ formato\ del\ reloj\ es\ 12h,\ si\ es\ false,\ el\ formato\ es\ 24h.\r\n
+comment1.text=\r\n\ Constructor\ que\ permite\ fijar\ la\ hora\ por\ par\u00E1metros.\r\n\ Se\ le\ a\u00F1ade\ adem\u00E1s\ como\ par\u00E1metro\ una\ variable\ booleana.\r\n\ Si\ es\ true,\ el\ formato\ del\ reloj\ es\ 12h,\ si\ es\ false,\ el\ formato\ es\ 24h.\r\n\ Se\ le\ a\u00F1aden\ d\u00EDa,\ mes,\ a\u00F1o\ como\ par\u00E1metros\r\n\ y\ se\ muestran\ en\ un\ string\ con\ formato\ dd/mm/aa\r\n
 comment2.params=h\ m\ nuevoDia\ nuevoMes\ nuevoAnno
 comment2.target=void\ setTime(int,\ int,\ int,\ int,\ int)
-comment2.text=\r\n\ M\u00E9todo\ que\ permite\ fijar\ horas\ y\ minutos\ introducidos\ por\ par\u00E1metro.\r\n
+comment2.text=\r\n\ M\u00E9todo\ que\ permite\ fijar\ horas,\ minutos,\ d\u00EDa,\ mes\ y\ a\u00F1o\ introducidos\ por\ par\u00E1metro.\r\n
 comment3.params=
 comment3.target=java.lang.String\ getTime()
 comment3.text=\r\n\ M\u00E9todo\ que\ devuelve\ una\ cadena\ de\ 5\ caracteres\ con\ formato\ "00\:00"\r\n

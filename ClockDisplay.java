@@ -28,7 +28,7 @@ public class ClockDisplay
     * Constructor que fija la hora a 00:00 y establece el límite.
     * Se le pasa por parámetro una variable booleana.
     * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
-    * Se le añaden objetos día, mes, año con valores iniciales para una fecha determinada.
+    * Se le añaden día, mes, año con valores iniciales para una fecha determinada
     * y se muestran en un string con formato dd/mm/aa
     */
    public ClockDisplay(boolean tipoReloj)
@@ -50,6 +50,8 @@ public class ClockDisplay
     * Constructor que permite fijar la hora por parámetros.
     * Se le añade además como parámetro una variable booleana.
     * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
+    * Se le añaden día, mes, año como parámetros
+    * y se muestran en un string con formato dd/mm/aa
     */
    public ClockDisplay(int nuevaHora,int nuevoMinuto,boolean tipoReloj,int diaInicio,int mesInicio,int annoInicio)
    {
@@ -69,7 +71,7 @@ public class ClockDisplay
    }
    
    /**
-    * Método que permite fijar horas y minutos introducidos por parámetro.
+    * Método que permite fijar horas, minutos, día, mes y año introducidos por parámetro.
     */
    
    public void setTime(int h,int m,int nuevoDia,int nuevoMes,int nuevoAnno)
@@ -104,8 +106,20 @@ public class ClockDisplay
        minutos.increment();
        if (minutos.getValue() == 0){
            horas.increment();
+           if (horas.getValue() == 0){
+               dia.increment();
+               dia.increment();
+               if (dia.getValue() == 1){
+                   mes.increment();
+                   mes.increment();
+                   if (dia.getValue() == 1 && mes.getValue() == 1){
+                       anno.increment();
+                   }
+               }
+           }
        }
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
+       fechaActual = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
     
    /**
