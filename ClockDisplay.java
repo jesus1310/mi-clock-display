@@ -92,7 +92,7 @@ public class ClockDisplay
    /**
     * Actualiza la hora en formato 12 horas (AM/PM)
     */
-   private void update()
+   public void update()
    {
       if (horas.getValue()>12){
            int actualiza = horas.getValue()-12;
