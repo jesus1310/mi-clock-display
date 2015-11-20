@@ -15,11 +15,21 @@ public class ClockDisplay
    private String horaActual;
    // Atributo que permite elegir si se utilizará el reloj en formato 12h o 24h
    private boolean formato;
+   // Atributo que controla el día
+   private NumberDisplay dia;
+   // Atributo que controla el mes
+   private NumberDisplay mes;
+   // Atributo que controla el año
+   private NumberDisplay anno;
+   // Atributo que muestra la fecha en formato dd/mm/aa
+   private String fechaActual;
    
    /**
     * Constructor que fija la hora a 00:00 y establece el límite.
     * Se le pasa por parámetro una variable booleana.
     * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
+    * Se le añaden objetos día, mes, año con valores iniciales para una fecha determinada.
+    * y se muestran en un string con formato dd/mm/aa
     */
    public ClockDisplay(boolean tipoReloj)
    {
@@ -27,6 +37,13 @@ public class ClockDisplay
        minutos = new NumberDisplay(60);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
        formato = tipoReloj;
+       dia = new NumberDisplay(31);
+       dia.setValue(20);
+       mes = new NumberDisplay(13);
+       mes.setValue(11);
+       anno = new NumberDisplay(100);
+       anno.setValue(15);
+       fechaActual = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
    
    /**
@@ -34,7 +51,7 @@ public class ClockDisplay
     * Se le añade además como parámetro una variable booleana.
     * Si es true, el formato del reloj es 12h, si es false, el formato es 24h.
     */
-   public ClockDisplay(int nuevaHora,int nuevoMinuto,boolean tipoReloj)
+   public ClockDisplay(int nuevaHora,int nuevoMinuto,boolean tipoReloj,int diaInicio,int mesInicio,int annoInicio)
    {
        horas = new NumberDisplay(24);
        horas.setValue(nuevaHora);
@@ -42,23 +59,28 @@ public class ClockDisplay
        minutos.setValue(nuevoMinuto);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
        formato = tipoReloj;
-       if (formato==true){
-           update();
-       }
+       dia = new NumberDisplay(31);
+       dia.setValue(diaInicio);
+       mes = new NumberDisplay(13);
+       mes.setValue(mesInicio);
+       anno = new NumberDisplay(100);
+       anno.setValue(annoInicio);
+       fechaActual = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
    
    /**
     * Método que permite fijar horas y minutos introducidos por parámetro.
     */
    
-   public void setTime(int h,int m)
+   public void setTime(int h,int m,int nuevoDia,int nuevoMes,int nuevoAnno)
    {
        horas.setValue(h);
        minutos.setValue(m);
+       dia.setValue(nuevoDia);
+       mes.setValue(nuevoMes);
+       anno.setValue(nuevoAnno);
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       if (formato==true){
-           update();
-       }
+       fechaActual = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
    
    /**
@@ -70,7 +92,7 @@ public class ClockDisplay
        if (formato==true){
            update();
        }
-       return horaActual;
+       return horaActual + " " + fechaActual;
    }
    
    /**
@@ -84,9 +106,6 @@ public class ClockDisplay
            horas.increment();
        }
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       if (formato==true){
-           update();
-       }
    }
     
    /**
