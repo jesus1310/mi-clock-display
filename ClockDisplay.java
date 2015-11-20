@@ -107,14 +107,22 @@ public class ClockDisplay
        if (minutos.getValue() == 0){
            horas.increment();
            if (horas.getValue() == 0){
-               dia.increment();
-               dia.increment();
-               if (dia.getValue() == 1){
-                   mes.increment();
-                   mes.increment();
-                   if (dia.getValue() == 1 && mes.getValue() == 1){
-                       anno.increment();
+               if (dia.getValue() == 30){
+                   dia.increment();
+                   dia.increment();
+                   if (dia.getValue() == 1){
+                       mes.increment();
+                       if (mes.getValue() == 12){
+                           mes.increment();
+                           mes.increment();
+                           if (dia.getValue() == 1 && mes.getValue() == 1){
+                               anno.increment();
+                           }
+                       }
                    }
+               }
+               else {
+                   dia.increment();
                }
            }
        }
