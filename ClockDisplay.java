@@ -115,7 +115,7 @@ public class ClockDisplay
        if (formato==true){
            update();
        }
-       if (fechaActual != null){
+       if (fechaNueva == null){
            return horaActual + " " + fechaActual;
        }
        else{
