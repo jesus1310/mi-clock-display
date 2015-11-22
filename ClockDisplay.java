@@ -87,7 +87,7 @@ public class ClockDisplay
        mes.setValue(mesInicio);
        anno = new NumberDisplay(100);
        anno.setValue(annoInicio);
-       fechaNueva = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();;
+       fechaNueva = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
    
    /**
@@ -142,7 +142,7 @@ public class ClockDisplay
                            mes.increment();
                            if (mes.getValue() == 1){
                                anno.increment();
-                            }
+                           }
                        }
                        else{
                            mes.increment();
@@ -155,12 +155,7 @@ public class ClockDisplay
            }
        }
        horaActual = horas.getDisplayValue() + ":" + minutos.getDisplayValue();
-       if (fechaNueva == fechaActual){
-           fechaNueva = formatoFecha.format(hoy);
-       }
-       else{
-           fechaNueva = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
-       }
+       fechaNueva = dia.getDisplayValue() + "/" + mes.getDisplayValue() + "/" + anno.getDisplayValue();
    }
    
    /**
